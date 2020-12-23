@@ -2,7 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 
 var charType = ""
-
 var charLower = "abcdefghijklmnopqrstuvwxyz";
 var charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var charNumeric = '0123456789';
@@ -18,15 +17,16 @@ function writePassword() {
     charLength = parseInt(charLength);
   }
  
+  // define password and count
   var password = "";
   var count = 0;
+
   //confirm Uppercase
   var confirmUpper = confirm("Do you want uppercase characters?")
   if (confirmUpper === true) {
     password = password + charUpper.charAt(Math.floor(Math.random() * Math.floor(charUpper.length - 1)));
     charType = charType + charUpper
     count++
-   
   }
   
   //confirm Lowercase
@@ -37,7 +37,6 @@ function writePassword() {
     count++
   }
 
-
   //confirm Numeric
   var confirmNumeric = confirm("Do you want numeric characters?")
   if (confirmNumeric === true) {
@@ -45,7 +44,6 @@ function writePassword() {
     charType = charType + charNumeric
     count++
   }
-
 
   //confirm Special
   var confirmSpecial = confirm("Do you want special characters?")
@@ -55,7 +53,7 @@ function writePassword() {
     count++
   }
 
-  //   //create a loop to choose password characters
+  //For loop to choose password characters
   for (var i = 0; i < charLength - count; i++) {
     password = password + charType.charAt(Math.floor(Math.random() * Math.floor(charType.length - 1)));
   }
