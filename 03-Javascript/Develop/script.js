@@ -1,6 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var charType = ""
+
+var charLower = "abcdefghijklmnopqrstuvwxyz";
+var charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var charNumeric = '0123456789';
+var charSpecial = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+
 // Write password to the #password input
 function writePassword() {
   //prompt length
@@ -10,78 +17,50 @@ function writePassword() {
     charLength = prompt("Select a character length between 8 - 128");
     charLength = parseInt(charLength);
   }
-  alert("You chose " + charLength + " characters!!!");
-
+ 
+  var password = "";
+  var count = 0;
   //confirm Uppercase
-  var charUpper = confirm("Do you want uppercase characters?")
-  if (charUpper === true) {
-    alert("cool")
+  var confirmUpper = confirm("Do you want uppercase characters?")
+  if (confirmUpper === true) {
+    password = password + charUpper.charAt(Math.floor(Math.random() * Math.floor(charUpper.length - 1)));
+    charType = charType + charUpper
+    count++
+   
   }
-  else {
-    alert("bad idea")
+  
+  //confirm Lowercase
+  var confirmLower = confirm("Do you want lowercase characters?")
+  if (confirmLower === true) {
+    password = password + charLower.charAt(Math.floor(Math.random() * Math.floor(charLower.length - 1)));
+    charType = charType + charLower
+    count++
   }
 
-  //confirm Lowercase
-  var charLower = confirm("Do you want lowercase characters?")
-  if (charLower === true) {
-    alert("cool")
-  }
-  else {
-    alert("bad idea")
-  }
 
   //confirm Numeric
-  var charNumeric = confirm("Do you want numeric characters?")
-  if (charNumeric === true) {
-    alert("cool")
+  var confirmNumeric = confirm("Do you want numeric characters?")
+  if (confirmNumeric === true) {
+    password = password + charNumeric.charAt(Math.floor(Math.random() * Math.floor(charNumeric.length - 1)));
+    charType = charType + charNumeric
+    count++
   }
-  else {
-    alert("bad idea")
-  }
+
 
   //confirm Special
-  var charSpecial = confirm("Do you want special characters?")
-  if (charSpecial === true) {
-    alert("cool")
+  var confirmSpecial = confirm("Do you want special characters?")
+  if (confirmSpecial === true) {
+    password = password + charSpecial.charAt(Math.floor(Math.random() * Math.floor(charSpecial.length - 1)));
+    charType = charType + charSpecial
+    count++
   }
-  else {
-    alert("bad idea")
-  }
-
-  //  //Set password length
-  //   let complexity=document.getElementbyID("charLength").value
-
-  //   //possible password values
-  //   let value="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]\:;?><,./-=";
-
-  //   let password ="";
 
   //   //create a loop to choose password characters
-  //   for(var i=0; i <= complexity; i++){
-  //     password = password + value.charAt(Math.floor(Math.random() * Math.floor(value.length - 1)));
-  //   }
-  //   alert(password)
+  for (var i = 0; i < charLength - count; i++) {
+    password = password + charType.charAt(Math.floor(Math.random() * Math.floor(charType.length - 1)));
+  }
 
-
-
-  // //Array.push?
-  // //  var charType = ["charSpecial, charNumeric, charLower, charUpper"]
-
-  // var length = charLength
-  // var charLower = "abcdefghijklmnopqrstuvwxyz"; 
-  // var charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  // var charNumeric = '0123456789';
-  // var charSpecial = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
-
-  // //  Random character generator
-  //  var randomnumber = Math.floor(Math.random()*charLength)
-
-
-  var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-
-
   passwordText.value = password;
 
 }
