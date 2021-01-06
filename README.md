@@ -9,8 +9,6 @@ https://litabeach.github.io/Javascript-Password-Generator/
 
 ## Table of Contents
 
-If your README is very long, add a table of contents to make it easy for users to find what they need.
-
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
