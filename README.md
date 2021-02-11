@@ -18,7 +18,7 @@ https://litabeach.github.io/Javascript-Password-Generator/03-Javascript/Develop/
 
 Click the 'Generate Password' button, then answer a series of questions to generate a random password. 
 
-![Screenshot of a webpage titled 'Password Generator' that contains a text box and button](03-Javascript\Assets\screenshot.png)
+![Screenshot of a webpage titled 'Password Generator' that contains a text box and button](03-Javascript/Assets/screenshot.png)
 
 
 ## Credits
