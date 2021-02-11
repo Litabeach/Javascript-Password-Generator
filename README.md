@@ -4,7 +4,7 @@
 
 This generator will create a a random password based on used input about length and character type.
 
-https://litabeach.github.io/Javascript-Password-Generator/
+https://litabeach.github.io/Javascript-Password-Generator/03-Javascript/Develop/index.html
 
 
 ## Table of Contents
